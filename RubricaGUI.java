@@ -1,3 +1,4 @@
+package Rubrica;
 
 
 import java.awt.BorderLayout;
@@ -45,7 +46,7 @@ public class RubricaGUI extends JFrame {
 	        panelInput.add(txtNumerotel);
 	        
 	        panelInput.add(new JLabel("Email :"));
-	        txtnome = new JTextField();
+	        txtemail = new JTextField();
 	        panelInput.add(txtemail);
 	        
 	        JPanel panelPulsanti = new JPanel();
@@ -63,8 +64,8 @@ public class RubricaGUI extends JFrame {
 	        JScrollPane scrool = new JScrollPane(areaContatti);
 	        
 	        add(panelInput, BorderLayout.NORTH);
-	        add(panelInput, BorderLayout.CENTER);
-	        add(panelInput, BorderLayout.SOUTH);
+	        add(panelPulsanti, BorderLayout.CENTER);
+	        add(scrool, BorderLayout.SOUTH);
 	        
 	        aggiungiEventi();
 	    }
@@ -78,7 +79,7 @@ public class RubricaGUI extends JFrame {
 	    			String Numero = txtNumerotel.getText();
 	    			String Email = txtemail.getText();
 	    			if(!Nome.isEmpty() && !Numero.isEmpty() ) {
-	    				Contatto nuovoContatto = new Contatto(Nome, Integer.parseInt(Numero), Email);
+	    				Contatto nuovoContatto = new Contatto(Nome, Numero, Email);
 	    				rubrica.aggiungiContatto(nuovoContatto);
 	    				
 	    				txtnome.setText(" ");
@@ -129,14 +130,5 @@ public class RubricaGUI extends JFrame {
 	    		
 	    	});
 	        
-	    }
-	    public static void main(String[] args) {
-	        // Crea e mostra la finestra
-	        SwingUtilities.invokeLater(new Runnable() {
-	            public void run() {
-	                RubricaGUI gui = new RubricaGUI();
-	                gui.setVisible(true);
-	            }
-	        });
 	    }
 	}
