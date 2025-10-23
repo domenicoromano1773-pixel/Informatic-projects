@@ -1,3 +1,4 @@
+package Rubrica;
 
 import java.util.ArrayList;
 public class Rubrica {
@@ -18,19 +19,18 @@ public class Rubrica {
 		Contatti.remove(a);
 	}
 	public boolean CercaContatto(String a) {
-		boolean sem = false;
-		for(int i = 0; i< Contatti.size();i++) {
-			if(a.equals(Contatti.get(i).getNome())) {
-				sem = true;
-			}
-		
-		}
-	if(sem == true) {
-		System.out.println("Il contatto  è stato trovato");
-	}else {
-		System.out.println("il contatto non è stato trovato");
-		}
-	return sem;
-	
+	    boolean sem = false;
+	    for(int i = 0; i < Contatti.size(); i++) {
+	        if(a.equals(Contatti.get(i).getNome())) {
+	            sem = true;
+	            break; 
+	        }
+	    }
+	    if(sem == true) {
+	        System.out.println("Il contatto è stato trovato");
+	    } else {
+	        System.out.println("Il contatto non è stato trovato");
+	    }
+	    return sem;
 	}
 }
